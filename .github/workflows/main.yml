@@ -40,7 +40,7 @@ jobs:
           path: build/libs/Devops_group_examination6-0.0.1-SNAPSHOT.jar
 
   docker_build_and_push:
-    if: github.ref == 'refs/heads/master'
+    if: (github.ref == 'refs/heads/master') || (github.event_name == 'pull_request' && github.head_ref == 'master')
     needs: setup_and_build
     runs-on: ubuntu-latest
     permissions:
