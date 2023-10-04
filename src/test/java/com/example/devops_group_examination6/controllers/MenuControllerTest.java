@@ -35,7 +35,8 @@ class MenuControllerTest {
     public void getTodaysMenuTest() throws Exception {
         String todaysDate = LocalDate.now().getDayOfWeek().toString();
         String expectedMenu = "Todays Menu";
-        String toFailTest = "Change for branch1";
+        String toFailTest = "Change to branch2";
+
         when(menuManipulator.checkTodaysMenu(todaysDate)).thenReturn(expectedMenu);
 
         mockMvc.perform(get("/menu/today"))
