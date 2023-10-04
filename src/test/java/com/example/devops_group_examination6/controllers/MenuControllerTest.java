@@ -40,7 +40,7 @@ class MenuControllerTest {
 
         mockMvc.perform(get("/menu/today"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(toFailTest));
+                .andExpect(content().string(expectedMenu));
     }
     @Test
     public void getWeekMenuTest() throws Exception {
